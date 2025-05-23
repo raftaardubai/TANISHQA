@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tanikshaa Toss Book</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      backdrop-filter: brightness(0.7);
+    }
+
+  h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+  font-weight: 900;
+  color: #FFD700; /* Golden Yellow */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Subtle glow effect */
+}
+
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    .timer {
+      font-size: 72px;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .seconds-left {
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      color: #eee;
+    }
+
+    .info {
+      font-size: 22px;
+      margin: 10px 0;
+      font-weight: 500;
+      color: #f1f1f1;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    .buttons {
+      margin-top: 40px;
+    }
+
+    .join-btn {
+  background: linear-gradient(to right, #FFD700, #FFA500); /* Golden yellow gradient */
+  color: #000;
+  border: none;
+  padding: 15px 35px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  background: linear-gradient(to right, #FFA500, #FFD700);
+  transform: scale(1.05);
+}
+
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+  background: #fff8dc; /* Light yellow background */
+  padding: 30px;
+  border-radius: 10px;
+  color: #000;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content button {
+  background: #FFD700;
+  color: #000;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+  background: #FFC300;
+}
+
+
+    @media (max-width: 600px) {
+      h1 { font-size: 40px; }
+      .timer { font-size: 50px; }
+      .info { font-size: 18px; }
+    }
+
+    a.join-btn {
+  text-decoration: none;
+  display: inline-block;
+}
+
+  </style>
+</head>
+<body>
+
+ <h1><strong>TANISHQA TOSS BOOK</strong></h1>
+
+  <h2>BEST TOSS ID EVER</h2>
+
+  <div class="timer" id="timer">60</div>
+  <div class="seconds-left">SECONDS LEFT</div>
+
+  <div class="info">⚡️ INTERNATIONAL TOSS AVAILABLE  ⚡️</div>
+  <div class="info">⚡️ ALL LOCAL TOSS ALSO AVAILABLE ⚡️</div>
+
+  <div class="buttons">
+    <a href="https://wa.me/919220305654" target="_blank" class="join-btn">WHATSAPP</a>
+    <a href="https://t.me/+yockxl6vbBZhNDE1" target="_blank" class="join-btn">TELEGRAM</a>
+
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Welcome to Tanikshaa Toss Book!</h3>
+      <p>Contact us on <strong>Telegram</strong> to get started with the best toss experience.</p>
+      <button onclick="hidePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    let time = 60;
+    const timerEl = document.getElementById('timer');
+    const countdown = setInterval(() => {
+      time--;
+      timerEl.textContent = time < 10 ? "0" + time : time;
+      if (time <= 0) {
+        clearInterval(countdown);
+        timerEl.textContent = '00';
+      }
+    }, 1000);
+
+    function showPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function hidePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
